@@ -36,6 +36,16 @@ class Project
      */
     private $language;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $repositoryUrl;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $repositoryType;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +95,30 @@ class Project
     public function setLanguage(string $language): self
     {
         $this->language = $language;
+
+        return $this;
+    }
+
+    public function getRepositoryUrl(): ?string
+    {
+        return $this->repositoryUrl;
+    }
+
+    public function setRepositoryUrl(string $repositoryUrl): self
+    {
+        $this->repositoryUrl = $repositoryUrl;
+
+        return $this;
+    }
+
+    public function getRepositoryType(): ?string
+    {
+        return $this->repositoryType;
+    }
+
+    public function setRepositoryType(string $repositoryType): self
+    {
+        $this->repositoryType = $repositoryType;
 
         return $this;
     }
